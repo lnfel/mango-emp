@@ -1,64 +1,85 @@
-# CodeIgniter 4 Application Starter
+# Mango SIMS: EMP module
 
-## What is CodeIgniter?
+## Setting up workspace
+**Download** the repo and place it on xampp/htdocs folder or clone it using git cli:
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible, and secure. 
-More information can be found at the [official site](http://codeigniter.com).
+    cd C:\xampp\htdocs
+    git clone https://github.com/lnfel/mango-emp.git
 
-This repository holds a composer-installable app starter.
-It has been built from the 
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+on git bash:
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+    cd /c/xampp/htdocs
+    git clone https://github.com/lnfel/mango-emp.git
 
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/). 
+Check app/Config/App.php and change the `$baseUrl`:
 
-## Installation & updates
+    public $baseURL = 'http://emp.mangosystemtech.com';
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+to
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+    public $baseURL = 'http://localhost/mango-emp/public';
 
-## Setup
+> Development branch is already configured to work on local environment, just switch your branch to development and pull the latest development branch. This is recommended when app is cloned the first time. [Learn more](####-checkout-development)
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+**Run xampp server**
 
-## Important Change with index.php
+> Optional Note: xampp root can be modified via Apacche `httpd.conf` on xampp control panel or look in:
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+    C:\xampp\apache\conf
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+Then change the lines:
 
-**Please** read the user guide for a better explanation of how CI4 works!
-The user guide updating and deployment is a bit awkward at the moment, but we are working on it!
+    DocumentRoot "C:/xampp/htdocs"
+    <Directory "C:/xampp/htdocs"> 
 
-## Repository Management
+And point it to your project folder:
 
-We use Github issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+    DocumentRoot "C:/xampp/htdocs/codeigniter4/public"
+    <Directory "C:/xampp/htdocs/codeigniter4/public">
 
-This repository is a "distribution" one, built by our release preparation script. 
-Problems with it can be raised on our forum, or as issues in the main repository.
+This will enable you to browse the index.php on codeigniter 4 directly using `http://localhost`. If root is `htdocs` you will need to browse `http://localhost/mango-emp/public`.
 
-## Server Requirements
+## Git Basics
+[Git GUI](https://desktop.github.com/) on desktop also uses the same features.
 
-PHP version 7.2 or higher is required, with the following extensions installed: 
+#### git init
+- Set the current folder to become a new local repository or initialize existing repository on current folder
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+#### git status
+- Check file changes on your working directory
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+#### git add
+- Add changed files to staging (prapared for committing)
+- `git add -A` adds all changed files to staging.
+- `git add <filename>` add a file to staging. Ex: `git add about.php`, `git add app/views/home.php`.
+- Running [`git status`](####-git-status) will show files and their relative paths that needs to be added to staging area.
 
-- json (enabled by default - don't turn it off)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
+#### git commit
+- Save changes on current local repository.
+- `git commit -m "Deleted index.php"`, passing `-m` option allows us to put comments to our commits. Remember to wrap comments inside double quotes.
+
+#### git branch
+- Lists all existing local branch.
+- `git branch <branch-name>`, creates new local branch.
+
+#### git pull
+- Download all changes from `<remote>` and directly merge it to current `<branch>`.
+- `git pull <remote> <branch>`, Ex. `git pull origin master` download updates from remote master branch.
+- Running `git remote` lists all remote links, by default you will have remote `origin` that clones from `master` branch if you have cloned the repository from github.
+
+#### git push
+- `git push origin master`, pushes the changes to remote `origin` on `master` branch.
+- To push to a different branch for example `development` branch, `git push origin development`.
+
+#### git checkout
+- By default git will initialize on `master` branch, use checkout option to switch branches locally.
+- Ex. switch to development branch, `git checkout development`. Note: the branch must exist first before switching out. Learn [`git branch`](####-git-branch).
+
+## Git Intermediate
+
+#### checkout development
+Checkout `development` from `<remote>`
+
+    git checkout --track origin/development
+
+This will create a new branch named `development` from remote `origin` and switch to development branch.
