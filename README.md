@@ -19,7 +19,7 @@ to
 
     public $baseURL = 'http://localhost/mango-emp/public';
 
-> Development branch is already configured to work on local environment, just switch your branch to development and pull the latest development branch. This is recommended when app is cloned the first time. [Learn more](####-checkout-development)
+> `Development` branch is already configured to work on local environment, just switch your branch to development and pull the latest development branch. This is recommended when app is cloned the first time. [Learn more](#checkout-development)
 
 **Run xampp server**
 
@@ -41,6 +41,7 @@ This will enable you to browse the index.php on codeigniter 4 directly using `ht
 
 ## Git Basics
 [Git GUI](https://desktop.github.com/) on desktop also uses the same features.
+Get [Git CLI](https://git-scm.com/downloads) here.
 
 #### git init
 - Set the current folder to become a new local repository or initialize existing repository on current folder
@@ -52,7 +53,7 @@ This will enable you to browse the index.php on codeigniter 4 directly using `ht
 - Add changed files to staging (prapared for committing)
 - `git add -A` adds all changed files to staging.
 - `git add <filename>` add a file to staging. Ex: `git add about.php`, `git add app/views/home.php`.
-- Running [`git status`](####-git-status) will show files and their relative paths that needs to be added to staging area.
+- Running [`git status`](#git-status) will show files and their relative paths that needs to be added to staging area.
 
 #### git commit
 - Save changes on current local repository.
@@ -73,7 +74,7 @@ This will enable you to browse the index.php on codeigniter 4 directly using `ht
 
 #### git checkout
 - By default git will initialize on `master` branch, use checkout option to switch branches locally.
-- Ex. switch to development branch, `git checkout development`. Note: the branch must exist first before switching out. Learn [`git branch`](####-git-branch).
+- Ex. switch to development branch, `git checkout development`. Note: the branch must exist first before switching out. Learn [`git branch`](#git-branch).
 
 ## Git Intermediate
 
@@ -83,3 +84,9 @@ Checkout `development` from `<remote>`
     git checkout --track origin/development
 
 This will create a new branch named `development` from remote `origin` and switch to development branch.
+
+> Note: with Git 2.23 (Q3 2019), that would use the new command git switch:
+
+    git switch -c <branch> --track <remote>/<branch>
+
+> Source: https://stackoverflow.com/questions/10002239/difference-between-git-checkout-track-origin-branch-and-git-checkout-b-branch
