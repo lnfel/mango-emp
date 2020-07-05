@@ -1,0 +1,1 @@
+Omae wa mou shindeiru~
