@@ -58,7 +58,7 @@ MAIN CONTENT LAYOUT
                 <!-- User Info -->
                 <div class="content-header-item">
                     <a class="img-link mr-5" href="be_pages_generic_profile.html">
-                        <img class="img-avatar img-avatar32" src="codebase/assets/media/avatars/avatar15.jpg" alt="">
+                        <img class="img-avatar img-avatar32" src="<?php echo base_url('codebase/assets/media/avatars/avatar15.jpg'); ?>" alt="">
                     </a>
                     <a class="align-middle link-effect text-primary-dark font-w600" href="be_pages_generic_profile.html">John Smith</a>
                 </div>
@@ -122,28 +122,28 @@ MAIN CONTENT LAYOUT
                     <ul class="nav-users push">
                         <li>
                             <a href="be_pages_generic_profile.html">
-                                <img class="img-avatar" src="codebase/assets/media/avatars/avatar2.jpg" alt="">
+                                <img class="img-avatar" src="<?php echo base_url('codebase/assets/media/avatars/avatar2.jpg'); ?>" alt="">
                                 <i class="fa fa-circle text-success"></i> Judy Ford
                                 <div class="font-w400 font-size-xs text-muted">Photographer</div>
                             </a>
                         </li>
                         <li>
                             <a href="be_pages_generic_profile.html">
-                                <img class="img-avatar" src="codebase/assets/media/avatars/avatar11.jpg" alt="">
+                                <img class="img-avatar" src="<?php echo base_url('codebase/assets/media/avatars/avatar11.jpg'); ?>" alt="">
                                 <i class="fa fa-circle text-success"></i> Jose Wagner
                                 <div class="font-w400 font-size-xs text-muted">Web Designer</div>
                             </a>
                         </li>
                         <li>
                             <a href="be_pages_generic_profile.html">
-                                <img class="img-avatar" src="codebase/assets/media/avatars/avatar1.jpg" alt="">
+                                <img class="img-avatar" src="<?php echo base_url('codebase/assets/media/avatars/avatar1.jpg'); ?>" alt="">
                                 <i class="fa fa-circle text-warning"></i> Megan Fuller
                                 <div class="font-w400 font-size-xs text-muted">UI Designer</div>
                             </a>
                         </li>
                         <li>
                             <a href="be_pages_generic_profile.html">
-                                <img class="img-avatar" src="codebase/assets/media/avatars/avatar13.jpg" alt="">
+                                <img class="img-avatar" src="<?php echo base_url('codebase/assets/media/avatars/avatar13.jpg'); ?>" alt="">
                                 <i class="fa fa-circle text-danger"></i> Albert Ray
                                 <div class="font-w400 font-size-xs text-muted">Copywriter</div>
                             </a>
@@ -393,14 +393,14 @@ MAIN CONTENT LAYOUT
             <div class="content-side content-side-full content-side-user px-10 align-parent">
                 <!-- Visible only in mini mode -->
                 <div class="sidebar-mini-visible-b align-v animated fadeIn">
-                    <img class="img-avatar img-avatar32" src="codebase/assets/media/avatars/avatar15.jpg" alt="">
+                    <img class="img-avatar img-avatar32" src="<?php echo base_url('codebase/assets/media/avatars/avatar15.jpg'); ?>" alt="">
                 </div>
                 <!-- END Visible only in mini mode -->
 
                 <!-- Visible only in normal mode -->
                 <div class="sidebar-mini-hidden-b text-center">
                     <a class="img-link" href="be_pages_generic_profile.html">
-                        <img class="img-avatar" src="codebase/assets/media/avatars/avatar15.jpg" alt="">
+                        <img class="img-avatar" src="<?php echo base_url('codebase/assets/media/avatars/avatar15.jpg'); ?>" alt="">
                     </a>
                     <ul class="list-inline mt-10">
                         <li class="list-inline-item">
@@ -1155,27 +1155,27 @@ MAIN CONTENT LAYOUT
                                 </a>
                             </div>
                             <div class="col-2 mb-5">
-                                <a class="text-elegance" data-toggle="theme" data-theme="codebase/assets/css/themes/elegance.min.css" href="javascript:void(0)">
+                                <a class="text-elegance" data-toggle="theme" data-theme="<?php echo base_url('codebase/assets/css/themes/elegance.min.css'); ?>" href="javascript:void(0)">
                                     <i class="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
                             <div class="col-2 mb-5">
-                                <a class="text-pulse" data-toggle="theme" data-theme="codebase/assets/css/themes/pulse.min.css" href="javascript:void(0)">
+                                <a class="text-pulse" data-toggle="theme" data-theme="<?php echo base_url('codebase/assets/css/themes/pulse.min.css'); ?>" href="javascript:void(0)">
                                     <i class="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
                             <div class="col-2 mb-5">
-                                <a class="text-flat" data-toggle="theme" data-theme="codebase/assets/css/themes/flat.min.css" href="javascript:void(0)">
+                                <a class="text-flat" data-toggle="theme" data-theme="<?php echo base_url('codebase/assets/css/themes/flat.min.css'); ?>" href="javascript:void(0)">
                                     <i class="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
                             <div class="col-2 mb-5">
-                                <a class="text-corporate" data-toggle="theme" data-theme="codebase/assets/css/themes/corporate.min.css" href="javascript:void(0)">
+                                <a class="text-corporate" data-toggle="theme" data-theme="<?php echo base_url('codebase/assets/css/themes/corporate.min.css'); ?>" href="javascript:void(0)">
                                     <i class="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
                             <div class="col-2 mb-5">
-                                <a class="text-earth" data-toggle="theme" data-theme="codebase/assets/css/themes/earth.min.css" href="javascript:void(0)">
+                                <a class="text-earth" data-toggle="theme" data-theme="<?php echo base_url('codebase/assets/css/themes/earth.min.css'); ?>" href="javascript:void(0)">
                                     <i class="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
@@ -1733,7 +1733,7 @@ MAIN CONTENT LAYOUT
 <div class="modal fade" id="modal-onboarding" tabindex="-1" role="dialog" aria-labelledby="modal-onboarding" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-popout" role="document">
         <div class="modal-content rounded">
-            <div class="block block-rounded block-transparent mb-0 bg-pattern" style="background-image: url('codebase/assets/media/various/bg-pattern-inverse.png');">
+            <div class="block block-rounded block-transparent mb-0 bg-pattern" style="background-image: url('<?php echo base_url("codebase/assets/media/various/bg-pattern-inverse.png"); ?>');">
                 <div class="block-header justify-content-end">
                     <div class="block-options">
                         <a class="font-w600 text-danger" href="#" data-dismiss="modal" aria-label="Close">
