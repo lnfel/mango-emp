@@ -1,5 +1,5 @@
 /*!
- * Codebase - v3.3.0
+ * Codebase - v3.4.0
  * @author pixelcave - https://pixelcave.com
  * Copyright (c) 2020
  */
