@@ -55,9 +55,11 @@ class Employee extends Controller {
 			'lastName' => $result[0]['LastName'],
 		];
 		
+		echo view('templates/header-assets', $data);
 		echo view('templates/header');
-		echo view('index', $data);
+		echo view('employee/index');
 		echo view('templates/footer');
+		echo view('templates/footer-assets');
 	}
 
 	public function where() {

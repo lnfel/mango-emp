@@ -2,8 +2,8 @@
 
 use CodeIgniter\Controller;
 
-class Dashboard extends Controller
-{
+class Dashboard extends BaseController {
+	
 	public function index($page = 'dashboard')
 	{
 		$data['title'] = ucfirst($page);
