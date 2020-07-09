@@ -1,5 +1,5 @@
 /*!
- * Codebase - v3.3.0
+ * Codebase - v3.4.0
  * @author pixelcave - https://pixelcave.com
  * Copyright (c) 2020
  */
@@ -9658,6 +9658,18 @@ small,
 .row.gutters-tiny .push,
 .row.gutters-tiny .block {
   margin-bottom: 6px;
+}
+
+@media (max-width: 767.98px) {
+  .row:not(.gutters-tiny):not(.no-gutters) {
+    margin-right: -6px;
+    margin-left: -6px;
+  }
+  .row:not(.gutters-tiny):not(.no-gutters) > .col,
+  .row:not(.gutters-tiny):not(.no-gutters) > [class*="col-"] {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
 }
 
 .row.row-deck > div {

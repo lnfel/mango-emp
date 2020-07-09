@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://emp.mangosystemtech.com';
+	public $baseURL = 'https://emp.mangosystemtech.com';
 
 	/*
 	|--------------------------------------------------------------------------

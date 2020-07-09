@@ -1,30 +1,45 @@
 <?php namespace App\Controllers;
 
 use CodeIgniter\Controller;
+use App\Models\AccountModel;
 
-class Site extends Controller
-{
-	public function index()
-	{
-		echo view('templates/header');
-		echo view('index');
-		echo view('templates/footer');
-	}
+class Site extends BaseController {
 
-	public function view($page = 'home')
-	{
-		if (! is_file(APPPATH.'/Views/site/'.$page.'.php')) {
-			// Whoops, we don't have a page for that!
+	public function index($page = 'login') {
 
-			throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
+		$data = [];
+		$data['title'] = ucfirst($page);
+
+		if ($this->request->getMethod() == 'post') {
+			// validation
+			$rules = [
+				'username' => 'required',
+				'password' => 'required|validateAccount[username,passsword]',
+			];
+			//validation error
+			$errors = [
+				'password' => [
+					'validateAccount' => 'Username or Password don\'t match'
+				]
+			];
+
+			if ( $this->validate($rules, $errors)) {
+				// if form submitted contains invalid values
+				$data['validation'] = $this->validator;
+			} else {
+				// look for account in database
+				$model = new AccountModel();
+				$user = $model->where('Username', $this->request->getVar('username'))->first();
+
+				// set session data
+				$session = session();
+				$session->set($user);
+				return redirect()->to('/dashboard');
+			}
 		}
 
-		$data['title'] = ucfirst($page); // Capitalize the first letter
-
-		echo view('templates/header', $data);
-		echo view('site/'.$page, $data);
-		echo view('templates/footer', $data);
+		echo view('templates/header-assets', $data);
+		echo view('index');
+		echo view('templates/footer-assets');
 	}
-
-	//--------------------------------------------------------------------
 }

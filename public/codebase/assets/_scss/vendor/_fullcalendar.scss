@@ -13,7 +13,7 @@
     border: 1px solid $brand-info-light;
     border-radius: 0;
 
-    @include hover {
+    @include hover() {
         color: $body-color;
     }
 }

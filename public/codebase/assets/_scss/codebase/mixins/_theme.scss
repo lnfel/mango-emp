@@ -42,7 +42,7 @@
             background-color: $link-color;
         }
 
-        @include hover {
+        @include hover() {
             color: $link-hover-color;
         }
     }
@@ -596,8 +596,8 @@
     }
 
     // Form feedback
-    @include form-validation-state("valid", $brand-success, false);
-    @include form-validation-state("invalid", $brand-danger, false);
+    @include form-validation-state("valid", $brand-success, $form-feedback-icon-valid);
+    @include form-validation-state("invalid", $brand-danger, $form-feedback-icon-invalid);
 
     // Material Forms
     .form-material {
@@ -981,7 +981,7 @@
         a {
             border-color: $body-bg;
 
-            @include hover {
+            @include hover() {
                 background-color: $body-bg-light;
             }
         }
@@ -1075,7 +1075,7 @@
             color: $body-color;
         }
 
-        @include hover {
+        @include hover() {
             border-color: $brand-primary;
 
             .dz-message {
@@ -1088,7 +1088,7 @@
     .fc-event {
         color: $body-color-dark;
 
-        @include hover {
+        @include hover() {
             color: $body-color;
         }
     }
