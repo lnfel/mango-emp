@@ -46,3 +46,10 @@ Options All -Indexes
 # Disable server signature start
     ServerSignature Off
 # Disable server signature end
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:emp.mangosystemtech.com
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} (www\.)?emp.mangosystemtech.com
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:emp.mangosystemtech.com
