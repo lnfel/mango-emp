@@ -1,5 +1,6 @@
-<?php namespace App\Validation;
+<?php 
 
+namespace App\Validation;
 use App\Models\AccountModel;
 
 class AccountRules {

@@ -34,4 +34,21 @@ class Validation
 	//--------------------------------------------------------------------
 	// Rules
 	//--------------------------------------------------------------------
+
+	public $login = [
+		'username' => [
+			'label' => 'Username',
+			'rules' => 'required',
+			'errors' => [
+				'required' => 'Please fill in your {field}.'
+			]
+		],
+    'password' => [
+    	'label' => 'Password',
+    	'rules' => 'required',
+    	'errors' => [
+				'required' => 'Please provide the {field}.'
+    	],
+    ]
+	];
 }
