@@ -1,4 +1,4 @@
-<!-- Page Container -->
+Page Container -->
 <!--
     Available classes for #page-container:
 
@@ -76,15 +76,22 @@ MAIN CONTENT LAYOUT
                         <!-- jQuery Validation functionality is initialized with .js-validation-signin class in js/pages/op_auth_signin.min.js which was auto compiled from _es6/pages/op_auth_signin.js -->
                         <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
                         <form class="js-validation-signin px-30" action="/" method="post">
+                            <!-- for successful signup -->
                             <?php if (session()->get('success')): ?>
                                 <div class="alert alert-success" role="alert">
                                     <?= session()->get('success') ?>
                                 </div>
                             <?php endif; ?>
-
+                            <!-- client validation -->
                             <?php if (isset($validation)): ?>
                                 <div class="alert alert-danger m-0 text-center" role="alert">
                                     <?= $validation->listErrors() ?>
+                                </div>
+                            <?php endif; ?>
+                            <!-- server validation -->
+                            <?php if (isset($result) && array_key_exists('error', $result)): ?>
+                                <div class="alert alert-danger m-0 text-center" role="alert">
+                                    <?php echo $result['error']; ?>
                                 </div>
                             <?php endif; ?>
                             <div class="form-group row">
@@ -134,4 +141,4 @@ MAIN CONTENT LAYOUT
     </main>
     <!-- END Main Container -->
 </div>
-<!-- END Page Container -->
+<!-- END Page Container
