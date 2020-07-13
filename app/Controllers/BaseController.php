@@ -15,6 +15,8 @@ namespace App\Controllers;
  */
 
 use CodeIgniter\Controller;
+// Models
+use App\Models\AccountModel;
 
 class BaseController extends Controller
 {
@@ -42,6 +44,7 @@ class BaseController extends Controller
 		// E.g.:
 		$this->session = \Config\Services::session();
 		//$validation =  \Config\Services::validation();
+		$this->account_model = new AccountModel();
 	}
 
 }

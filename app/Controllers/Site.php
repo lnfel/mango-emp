@@ -1,7 +1,6 @@
 <?php namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use App\Models\AccountModel;
 
 class Site extends BaseController {
 
@@ -25,9 +24,9 @@ class Site extends BaseController {
 	      $data['password'] = $this->request->getVar('password');
 
 	      // call an instance of AccountModel for access
-				$model = new AccountModel();
+				
 				//
-				$data['result'] = $model->login($data);
+				$data['result'] = $account_model->login($data);
 				if (array_key_exists('error', $data['result'])) {
 					// do nothing, on index page we have if(isset($result)) it will show error
 					$data['arrgh'] = 'oof';
